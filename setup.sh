@@ -2,6 +2,7 @@ cd ..
 
 echo "Updating apt"
 sudo apt update
+sudo apt install python3-pip
 
 echo "Installing xinit..."
 sudo apt install xinit -y
@@ -14,6 +15,8 @@ mkdir .config/polybar
 
 echo "Installing Polybar..."
 sudo apt install polybar -y
+sudo apt install rofi -y
+pip install pywal
 
 cd My-Desktop
 
