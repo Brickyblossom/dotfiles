@@ -18,8 +18,8 @@ sudo apt install polybar -y
 cd My-Desktop
 
 echo "Copying Polybar config..."
-cp config.ini .config/polybar/config.ini
-cp launch.sh .config/polybar/launch.sh
+cp config.ini ../.config/polybar/config.ini
+cp launch.sh ../.config/polybar/launch.sh
 
 chmod +x .config/polybar/launch.sh
 
@@ -66,8 +66,6 @@ echo "URxvt*background: black\n" >> .Xdefaults
 echo "URxvt*foreground: white\n" >> .Xdefaults
 echo "URxvt*font: xft:Ubuntu Mono:size=12:antialias=true" >> .Xdefaults
 echo "URxvt*boldfont: xft:Ubuntu Mono:bold:size=12:antialias=true" >> .Xdefaults
-
-cd My-Desktop
 
 echo "Starting X session..."
 startx
