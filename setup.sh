@@ -56,6 +56,18 @@ cp .zshrc ../.zshrc
 echo "Launching zsh and starting powerlevel10k config"
 zsh
 
+echo "Installing Ubuntu font..."
+sudo apt install fonts-ubuntu
+
+cd ..
+echo "Installing dark mode on URxvt..."
+cat .Xresources
+URxvt*background: black
+URxvt*foreground: white
+URxvt*font: xft:Ubuntu Mono:size=12:antialias=true
+URxvt*boldfont: xft:Ubuntu Mono:bold:size=12:antialias=true
+\eof
+
 cd My-Desktop
 
 echo "Starting X session..."
