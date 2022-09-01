@@ -35,7 +35,7 @@ cd polybar-themes
 chmod +x setup.sh
 
 echo "Setting up Polybar theme..."
-sh setup.sh
+. setup.sh
 
 cd ../My-Desktop
 
