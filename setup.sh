@@ -58,7 +58,8 @@ sudo apt install fonts-ubuntu
 
 cd ..
 echo "Installing dark mode on URxvt..."
-cat .Xresources
+touch .Xdefaults
+cat .Xdefaults
 URxvt*background: black
 URxvt*foreground: white
 URxvt*font: xft:Ubuntu Mono:size=12:antialias=true
