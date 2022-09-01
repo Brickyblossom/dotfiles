@@ -53,9 +53,6 @@ cd My-Desktop
 echo "Copying .zshrc config and installing powerlevel10k..."
 cp .zshrc ../.zshrc
 
-echo "Launching zsh and starting powerlevel10k config"
-zsh
-
 echo "Installing Ubuntu font..."
 sudo apt install fonts-ubuntu
 
@@ -72,3 +69,7 @@ cd My-Desktop
 
 echo "Starting X session..."
 startx
+
+echo "Launching zsh and starting powerlevel10k config"
+exec zsh
+
