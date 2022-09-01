@@ -56,6 +56,9 @@ cd My-Desktop
 echo "Copying .zshrc config and installing powerlevel10k..."
 cp .zshrc ../.zshrc
 
+echo "Setting up xstart on login..."
+cp .zprofile ../.zprofile
+
 echo "Installing Ubuntu font..."
 sudo apt install fonts-ubuntu
 
