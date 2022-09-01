@@ -6,8 +6,8 @@ apt update
 echo ("Installing xinit...")
 apt install xinit -y
 
-echo ("Installing i3-gaps...")
-apt install i3-gaps -y
+echo ("Installing i3...")
+apt install i3 -y
 
 echo ("Creating config directory...")
 mkdir .config/polybar
