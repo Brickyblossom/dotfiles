@@ -1,19 +1,19 @@
 cd ..
 
 echo "Updating apt"
-apt update
+sudo apt update
 
 echo "Installing xinit..."
-apt install xinit -y
+sudo apt install xinit -y
 
 echo "Installing i3..."
-apt install i3 -y
+sudo apt install i3 -y
 
 echo "Creating config directory..."
 mkdir .config/polybar
 
 echo "Installing Polybar..."
-apt install polybar -y
+sudo apt install polybar -y
 
 cd My-Desktop
 
@@ -40,20 +40,23 @@ sh setup.sh
 cd ../My-Desktop
 
 echo "Installing zsh..."
-apt install zsh -y
+sudo apt install zsh -y
 
 echo "Installing ohmyzsh..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+cd ..
 echo "Downloading powerlevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+cd My-Desktop
 echo "Copying .zshrc config and installing powerlevel10k..."
 cp .zshrc ../.zshrc
 
 echo "Launching zsh and starting powerlevel10k config"
 zsh
 
+cd My-Desktop
 
 echo "Starting X session..."
 startx
