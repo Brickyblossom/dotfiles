@@ -76,6 +76,7 @@ chmod +x ../.config/polybar/launch.sh
 
 cp config ../.config/i3/config
 cp .xinitrc ../.xinitrc
+cp compton.conf ../.config/i3/compton.conf
 
 cd ..
 
@@ -88,6 +89,11 @@ chmod +x setup.sh
 
 echo "Setting up Polybar theme..."
 ./setup.sh
+
+echo "Installing rxvt-unicode..."
+sudo apt install rxvt-unicode -y
+
+sudo apt purge gnome-terminal -y
 
 echo "Starting X session..."
 startx
