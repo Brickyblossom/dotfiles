@@ -1,0 +1,5 @@
+URxvt*background: black
+URxvt*foreground: white
+URxvt*font: xft:Ubuntu Mono:size=12:antialias=true
+URxvt*boldfont: xft:Ubuntu Mono:bold:size=12:antialias=true
+URxvt*scrollBar: false
