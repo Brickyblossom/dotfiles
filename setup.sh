@@ -85,6 +85,7 @@ cp launch.sh ../.config/polybar/launch.sh
 chmod +x ../.config/polybar/launch.sh
 
 cp config ../.config/i3/config
+cp .xinitrc ../.xinitrc
 
 echo "Starting X session..."
 startx
