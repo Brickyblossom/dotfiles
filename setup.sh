@@ -33,16 +33,6 @@ sudo apt install polybar -y
 sudo apt install rofi -y
 pip install pywal
 
-echo "Downloading Polybar themes..."
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-
-cd polybar-themes
-
-chmod +x setup.sh
-
-echo "Setting up Polybar theme..."
-./setup.sh
-
 cd ../My-Desktop
 
 echo "Installing zsh..."
@@ -86,6 +76,18 @@ chmod +x ../.config/polybar/launch.sh
 
 cp config ../.config/i3/config
 cp .xinitrc ../.xinitrc
+
+cd ..
+
+echo "Downloading Polybar themes..."
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+
+cd polybar-themes
+
+chmod +x setup.sh
+
+echo "Setting up Polybar theme..."
+./setup.sh
 
 echo "Starting X session..."
 startx
