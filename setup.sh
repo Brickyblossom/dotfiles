@@ -1,5 +1,3 @@
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
 cd ..
 
 echo "Updating apt"
@@ -11,7 +9,9 @@ sudo apt install xinit -y
 
 echo "Building i3-gaps..."
 sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool libxcb-shape0-dev -y 
-cd /tmp
+
+mkdir temp
+cd temp
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
 git checkout gaps && git pull
@@ -23,7 +23,8 @@ cd build
 make
 sudo make install
 
-cd SCRIPT_DIR
+cd ../../..
+sudo rm -r temp
 
 echo "Creating config directory..."
 mkdir .config/polybar
