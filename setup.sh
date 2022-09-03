@@ -33,7 +33,7 @@ sudo apt install polybar -y
 sudo apt install rofi -y
 sudo pip install pywal
 
-cd ../My-Desktop
+cd My-Desktop
 
 echo "Installing zsh..."
 sudo apt install zsh -y
@@ -83,6 +83,9 @@ echo "Installing rxvt-unicode..."
 sudo apt install rxvt-unicode -y
 
 sudo apt purge gnome-terminal -y
+
+echo "Installing additional goodies..."
+sudo apt install feh picom -y
 
 echo "Starting X session..."
 startx
