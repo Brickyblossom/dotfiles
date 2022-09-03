@@ -16,6 +16,8 @@ git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
 git checkout gaps && git pull
 sudo apt install meson asciidoc -y
+
+echo "Installing i3-gaps..."
 meson -Ddocs=true -Dmans=true ../temp
 meson compile -C ../temp
 sudo meson install -C ../temp
@@ -30,18 +32,6 @@ echo "Installing Polybar..."
 sudo apt install polybar -y
 sudo apt install rofi -y
 pip install pywal
-
-cd My-Desktop
-
-echo "Copying Polybar config..."
-cp config.ini ../.config/polybar/config.ini
-cp launch.sh ../.config/polybar/launch.sh
-
-chmod +x .config/polybar/launch.sh
-
-cp config ../.config/i3/config
-
-cd ..
 
 echo "Downloading Polybar themes..."
 git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
@@ -85,6 +75,14 @@ echo "URxvt*background: black\n" >> .Xdefaults
 echo "URxvt*foreground: white\n" >> .Xdefaults
 echo "URxvt*font: xft:Ubuntu Mono:size=12:antialias=true" >> .Xdefaults
 echo "URxvt*boldfont: xft:Ubuntu Mono:bold:size=12:antialias=true" >> .Xdefaults
+
+echo "Copying Polybar and i3 config..."
+cp config.ini ../.config/polybar/config.ini
+cp launch.sh ../.config/polybar/launch.sh
+
+chmod +x .config/polybar/launch.sh
+
+cp config ../.config/i3/config
 
 echo "Starting X session..."
 startx
