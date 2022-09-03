@@ -58,12 +58,11 @@ sudo apt install fonts-ubuntu
 echo "Copying .Xdefaults..."
 cp .Xdefaults ../.Xdefaults
 
-echo "Copying Polybar and i3 config..."
+echo "Copying Polybar config..."
 cp config.ini ../.config/polybar/config.ini
 cp launch.sh ../.config/polybar/launch.sh
 chmod +x ../.config/polybar/launch.sh
 
-cp config ../.config/i3/config
 cp .xinitrc ../.xinitrc
 cp compton.conf ../.config/i3/compton.conf
 
@@ -89,6 +88,9 @@ sudo apt install feh picom -y
 
 echo "Starting X session..."
 startx
+
+echo "Copying i3 config..."
+cp config ../.config/i3/config
 
 echo "Launching zsh and starting powerlevel10k config"
 exec zsh
