@@ -31,7 +31,7 @@ mkdir .config/polybar
 echo "Installing Polybar..."
 sudo apt install polybar -y
 sudo apt install rofi -y
-pip install pywal
+sudo pip install pywal
 
 cd ../My-Desktop
 
