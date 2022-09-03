@@ -86,11 +86,11 @@ sudo apt purge gnome-terminal -y
 echo "Installing additional goodies..."
 sudo apt install feh picom -y
 
-echo "Starting X session..."
-startx
-
 echo "Copying i3 config..."
 cp config ../.config/i3/config
+
+echo "Starting X session..."
+startx
 
 echo "Launching zsh and starting powerlevel10k config"
 exec zsh
