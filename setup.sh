@@ -76,6 +76,8 @@ echo "URxvt*foreground: white\n" >> .Xdefaults
 echo "URxvt*font: xft:Ubuntu Mono:size=12:antialias=true" >> .Xdefaults
 echo "URxvt*boldfont: xft:Ubuntu Mono:bold:size=12:antialias=true" >> .Xdefaults
 
+
+cd My-Desktop
 echo "Copying Polybar and i3 config..."
 cp config.ini ../.config/polybar/config.ini
 cp launch.sh ../.config/polybar/launch.sh
