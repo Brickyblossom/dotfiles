@@ -2,20 +2,20 @@ cd ..
 
 echo "Updating apt"
 sudo apt update
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 
 echo "Installing xinit..."
 sudo apt install xinit -y
 
 echo "Building i3-gaps..."
-sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb-xrm-dev autoconf xutils-dev libtool automake -y
+sudo apt install libxcb-shape0 libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake -y
 
 mkdir temp
 cd temp
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
 git checkout gaps && git pull
-sudo apt install meson asciidoc
+sudo apt install meson asciidoc -y
 meson -Ddocs=true -Dmans=true ../temp
 meson compile -C ../temp
 sudo meson install -C ../temp
