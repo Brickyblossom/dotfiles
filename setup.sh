@@ -55,23 +55,12 @@ cp .zprofile ../.zprofile
 echo "Installing Ubuntu font..."
 sudo apt install fonts-ubuntu
 
-cd ..
-echo "Installing dark mode on URxvt..."
-touch .Xdefaults
+echo "Copying .Xdefaults..."
+cp .Xdefaults ../.Xdefaults
 
-echo "Wiping .Xdefaults..."
-echo "" > .Xdefaults
-echo "URxvt*background: black\n" >> .Xdefaults
-echo "URxvt*foreground: white\n" >> .Xdefaults
-echo "URxvt*font: xft:Ubuntu Mono:size=12:antialias=true" >> .Xdefaults
-echo "URxvt*boldfont: xft:Ubuntu Mono:bold:size=12:antialias=true" >> .Xdefaults
-
-
-cd My-Desktop
 echo "Copying Polybar and i3 config..."
 cp config.ini ../.config/polybar/config.ini
 cp launch.sh ../.config/polybar/launch.sh
-
 chmod +x ../.config/polybar/launch.sh
 
 cp config ../.config/i3/config
