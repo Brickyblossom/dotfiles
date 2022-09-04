@@ -58,11 +58,6 @@ sudo apt install fonts-ubuntu
 echo "Copying .Xdefaults..."
 cp .Xdefaults ../.Xdefaults
 
-echo "Copying Polybar config..."
-cp config.ini ../.config/polybar/config.ini
-cp launch.sh ../.config/polybar/launch.sh
-chmod +x ../.config/polybar/launch.sh
-
 cp .xinitrc ../.xinitrc
 cp compton.conf ../.config/i3/compton.conf
 
@@ -77,6 +72,13 @@ chmod +x setup.sh
 
 echo "Setting up Polybar theme..."
 ./setup.sh
+
+echo "Copying Polybar config..."
+cp config.ini ../.config/polybar/shapes/config.ini
+cp modules.ini ../.config/polybar/shapes/modules.ini
+cp launch.sh ../.config/polybar/launch.sh
+chmod +x ../.config/polybar/launch.sh
+
 
 echo "Installing rxvt-unicode..."
 sudo apt install rxvt-unicode -y
