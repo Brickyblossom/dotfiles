@@ -83,13 +83,13 @@ install_music(){
 }
 
 copy_config(){
-	cp $HOME/dotfiles/config.ini ../.config/polybar/config.ini
-	cp $HOME/dotfiles/launch.sh ../.config/polybar/launch.sh
-	chmod +x ../.config/polybar/launch.sh
+	cp $HOME/dotfiles/config.ini $HOME/.config/polybar/config.ini
+	cp $HOME/dotfiles/launch.sh $HOME/.config/polybar/launch.sh
+	chmod +x $HOME/.config/polybar/launch.sh
 
-	cp $HOME/dotfiles/.xinitrc ../.xinitrc
-	cp $HOME/dotfiles/compton.conf ../.config/i3/compton.conf
-	cp $HOME/dotfiles/config ../.config/i3/config
+	cp $HOME/dotfiles/.xinitrc $HOME/.xinitrc
+	cp $HOME/dotfiles/compton.conf $HOME/.i3/compton.conf
+	cp $HOME/dotfiles/config $HOME/.i3/config
 }
 
 install_kitty
