@@ -1,4 +1,5 @@
-cd ..
+
+cd $HOME
 
 echo "Updating apt"
 sudo apt update
