@@ -82,6 +82,16 @@ install_music(){
 	fi
 }
 
+copy_config(){
+	cp $HOME/dotfiles/config.ini ../.config/polybar/config.ini
+	cp $HOME/dotfiles/launch.sh ../.config/polybar/launch.sh
+	chmod +x ../.config/polybar/launch.sh
+
+	cp $HOME/dotfiles/.xinitrc ../.xinitrc
+	cp $HOME/dotfiles/compton.conf ../.config/i3/compton.conf
+	cp $HOME/dotfiles/config ../.config/i3/config
+}
+
 install_kitty
 
 install_neofetch
@@ -96,6 +106,8 @@ install_polybar
 
 install_music
 
-unset -f install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music
+copy_config
+
+unset -f install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music copy_config
 
 exit 0
