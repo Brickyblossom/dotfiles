@@ -7,6 +7,12 @@ if [ ! -f /usr/bin/git ]; then
 	sudo pacman -Sy --noconfirm install git curl
 fi
 
+install_firefox(){
+	if [ ! -f /usr/bin/firefox ]; then
+		echo "Installing firefox"
+	fi
+}
+
 install_kitty(){
 	if [ ! -f "$HOME/.local/bin/kitty" ]; then
 		echo "Installing kitty terminal emulator"
@@ -91,6 +97,7 @@ copy_config(){
 	cp $HOME/dotfiles/.xinitrc $HOME/.xinitrc
 	cp $HOME/dotfiles/compton.conf $HOME/.i3/compton.conf
 	cp $HOME/dotfiles/config $HOME/.i3/config
+	cp $HOME/dotfiles/.profile $HOME/.profile
 }
 
 install_kitty
@@ -107,8 +114,10 @@ install_polybar
 
 install_music
 
+install_firefox
+
 copy_config
 
-unset -f install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music copy_config
+unset -f install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music install_firefox copy_config
 
 exit 0
