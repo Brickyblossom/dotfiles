@@ -12,6 +12,7 @@ install_kitty(){
 		echo "Installing kitty terminal emulator"
 		curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 		ln -s "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/"
+		sudo ln -s "$HOME/.local/kitty.app/bin/kitty" "/usr/bin/"
 		# sudo ln -sf "$HOME/.local/kitty.app/bin/kitty" "/usr/bin/i3-sensible-terminal"
 	fi
 	return 0
