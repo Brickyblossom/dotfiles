@@ -91,7 +91,7 @@ install_music(){
 
 install_font(){
 	wget -L https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Regular/complete/Fantasque%20Sans%20Mono%20Regular%20Nerd%20Font%20Complete.ttf -O $HOME/dotfiles/fantasque_sans_mono.ttf
-	sudo cp $HOME/dotfiles/fantasque_sans_mono /usr/share/fonts
+	sudo cp $HOME/dotfiles/fantasque_sans_mono.ttf /usr/share/fonts
 	sudo fc-cache
 }
 
