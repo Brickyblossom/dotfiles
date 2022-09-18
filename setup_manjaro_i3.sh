@@ -98,6 +98,7 @@ copy_config(){
 	cp $HOME/dotfiles/compton.conf $HOME/.i3/compton.conf
 	cp $HOME/dotfiles/config $HOME/.i3/config
 	cp $HOME/dotfiles/.profile $HOME/.profile
+	cp $HOME/dotfiles/config.conf $HOME/.config/neofetch/config.conf
 }
 
 install_kitty
