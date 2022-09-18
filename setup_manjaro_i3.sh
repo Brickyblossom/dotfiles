@@ -96,6 +96,7 @@ install_font(){
 }
 
 copy_config(){
+	mkdir -p $HOME/.config/polybar
 	cp $HOME/dotfiles/config.ini $HOME/.config/polybar/config.ini
 	cp $HOME/dotfiles/launch.sh $HOME/.config/polybar/launch.sh
 	chmod +x $HOME/.config/polybar/launch.sh
