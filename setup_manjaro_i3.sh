@@ -89,6 +89,12 @@ install_music(){
 	fi
 }
 
+install_font(){
+	wget -L https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Regular/complete/Fantasque%20Sans%20Mono%20Regular%20Nerd%20Font%20Complete.ttf -O $HOME/dotfiles/fantasque_sans_mono.ttf
+	sudo cp $HOME/dotfiles/fantasque_sans_mono /usr/share/fonts
+	sudo fc-cache
+}
+
 copy_config(){
 	cp $HOME/dotfiles/config.ini $HOME/.config/polybar/config.ini
 	cp $HOME/dotfiles/launch.sh $HOME/.config/polybar/launch.sh
@@ -100,6 +106,8 @@ copy_config(){
 	cp $HOME/dotfiles/.profile $HOME/.profile
 	cp $HOME/dotfiles/config.conf $HOME/.config/neofetch/config.conf
 }
+
+install_font
 
 install_kitty
 
@@ -119,6 +127,6 @@ install_firefox
 
 copy_config
 
-unset -f install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music install_firefox copy_config
+unset -f install_font install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music install_firefox copy_config
 
 exit 0
