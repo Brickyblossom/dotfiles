@@ -60,7 +60,7 @@ install_neofetch(){
 install_picom(){
 	if [ ! -f /usr/bin/picom ]; then
 		echo "Installing picom compositor"
-		sudo pacman -Sy --noconfirm neofetch
+		sudo pacman -Sy --noconfirm picom
 	fi
 }
 
