@@ -10,6 +10,7 @@ fi
 install_firefox(){
 	if [ ! -f /usr/bin/firefox ]; then
 		echo "Installing firefox"
+		sudo pacman -Syu --noconfirm firefox
 	fi
 }
 
