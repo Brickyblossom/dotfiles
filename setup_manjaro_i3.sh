@@ -27,7 +27,7 @@ install_kitty(){
 install_zsh_omz_p10k(){
 	if [ ! -f /usr/bin/zsh ]; then
 		echo "No zsh executable found, downloading zsh"
-		sudo pacman -Sy --noconfirm install zsh
+		sudo pacman -Sy --noconfirm zsh
 		echo "zsh is installed"
 	fi
 
