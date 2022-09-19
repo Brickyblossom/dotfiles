@@ -71,6 +71,13 @@ install_feh(){
 	fi
 }
 
+install_nitrogen(){
+	if [ ! -f /usr/bin/nitrogen ]; then
+		echo "Installing nitrogen image/background tool"
+		sudo pacman -Sy --noconfirm nitrogen
+	fi
+}
+
 install_polybar(){
 	if [ ! -f /usr/bin/polybar ]; then
 		echo "Installing polybar"
@@ -93,6 +100,7 @@ install_font(){
 	wget -L https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Regular/complete/Fantasque%20Sans%20Mono%20Regular%20Nerd%20Font%20Complete.ttf -O $HOME/dotfiles/fantasque_sans_mono.ttf
 	sudo cp $HOME/dotfiles/fantasque_sans_mono.ttf /usr/share/fonts
 	sudo fc-cache
+	sudo pacman -Syu --noconfirm noto-fonts
 }
 
 copy_config(){
@@ -121,6 +129,8 @@ install_picom
 
 install_feh
 
+install_nitrogen
+
 install_polybar
 
 install_music
@@ -129,6 +139,6 @@ install_firefox
 
 copy_config
 
-unset -f install_font install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_polybar install_music install_firefox copy_config
+unset -f install_font install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_nitrogen  install_polybar install_music install_firefox copy_config
 
 exit 0
