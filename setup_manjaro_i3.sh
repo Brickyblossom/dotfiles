@@ -19,7 +19,7 @@ install_kitty(){
 		echo "Installing kitty terminal emulator"
 		curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 		ln -s "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/"
-		sudo ln -s "$HOME/.local/kitty.app/bin/kitty" "/usr/bin/"
+		# sudo ln -s "$HOME/.local/kitty.app/bin/kitty" "/usr/bin/"
 		# sudo ln -sf "$HOME/.local/kitty.app/bin/kitty" "/usr/bin/i3-sensible-terminal"
 	fi
 	return 0
@@ -62,6 +62,19 @@ install_picom(){
 	if [ ! -f /usr/bin/picom ]; then
 		echo "Installing picom compositor"
 		sudo pacman -Sy --noconfirm picom
+	fi
+}
+
+install_rofi(){
+	if [ ! -f /usr/bin/rofi ]; then
+		echo "Installing rofi"
+		sudo pacman -Sy --noconfirm rofi
+	fi
+	mkdir -p ~/.local/bin
+	if [ ! -f ~/.local/bin/rofi-power-menu ]; then
+		git clone https://github.com/jluttine/rofi-power-menu
+		cp ~/dotfiles/rofi-power-menu/rofi-power-menu ~/.local/bin
+		rm -R ~/dotfiles/rofi-power-menu
 	fi
 }
 
@@ -128,6 +141,8 @@ install_zsh_omz_p10k
 
 install_picom
 
+install_rofi
+
 install_feh
 
 install_nitrogen
@@ -140,6 +155,6 @@ install_firefox
 
 copy_config
 
-unset -f install_font install_kitty install_neofetch install_zsh_omz_p10k install_picom install_feh install_nitrogen  install_polybar install_music install_firefox copy_config
+unset -f install_font install_kitty install_neofetch install_zsh_omz_p10k install_picom install_rofi  install_feh install_nitrogen  install_polybar install_music install_firefox copy_config
 
 exit 0
