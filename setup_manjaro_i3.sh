@@ -124,9 +124,16 @@ copy_config(){
 	cp $HOME/dotfiles/launch.sh $HOME/.config/polybar/launch.sh
 	chmod +x $HOME/.config/polybar/launch.sh
 
+	cp $HOME/dotfiles/mpd -r $HOME/.config/
 	cp $HOME/dotfiles/.xinitrc $HOME/.xinitrc
-	cp $HOME/dotfiles/compton.conf $HOME/.i3/compton.conf
-	cp $HOME/dotfiles/config $HOME/.i3/config
+
+	if [ -d  $HOME/.i3 ]; then
+		cp $HOME/dotfiles/picom.conf $HOME/.i3/picom.conf
+		cp $HOME/dotfiles/config $HOME/.i3/config
+	else
+		cp $HOME/dotfiles/picom.conf $HOME/.config/i3/picom.conf
+		cp $HOME/dotfiles/config $HOME/.config/i3/config
+	fi
 	cp $HOME/dotfiles/.profile $HOME/.profile
 	cp $HOME/dotfiles/config.conf $HOME/.config/neofetch/config.conf
 }
