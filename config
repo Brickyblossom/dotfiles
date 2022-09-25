@@ -29,7 +29,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec $HOME/.local/bin/kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
