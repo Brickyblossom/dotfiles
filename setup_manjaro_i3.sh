@@ -29,6 +29,7 @@ install_zsh_omz_p10k(){
 	if [ ! -f /usr/bin/zsh ]; then
 		echo "No zsh executable found, downloading zsh"
 		sudo pacman -Sy --noconfirm zsh
+		cp $HOME/dotfiles/.zshrc $HOME/.zshrc
 		echo "zsh is installed"
 	fi
 
