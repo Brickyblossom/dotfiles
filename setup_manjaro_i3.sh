@@ -129,10 +129,10 @@ copy_config(){
 	cp $HOME/dotfiles/.xinitrc $HOME/.xinitrc
 
 	if [ -d  $HOME/.i3 ]; then
-		cp $HOME/dotfiles/picom.conf $HOME/.i3/picom.conf
+		cp $HOME/dotfiles/picom.conf $HOME/picom.conf
 		cp $HOME/dotfiles/config $HOME/.i3/config
 	else
-		cp $HOME/dotfiles/picom.conf $HOME/.config/i3/picom.conf
+		cp $HOME/dotfiles/picom.conf $HOME/picom.conf
 		cp $HOME/dotfiles/config $HOME/.config/i3/config
 	fi
 	cp $HOME/dotfiles/.profile $HOME/.profile
